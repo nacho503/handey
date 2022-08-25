@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaRegWindowClose } from "react-icons/fa";
 
 export const Nav = styled.nav`
   background: #000;
@@ -30,6 +30,10 @@ export const NavLink = styled(Link)`
 
   &.active {
     color: #15cdfc;
+
+    @media screen and (max-width: 768px) {
+      position: relative;
+    }
   }
 `;
 
@@ -45,6 +49,38 @@ export const Bars = styled(FaBars)`
     transform: translate(-100%, 75%);
     font-size: 1.8rem;
     cursor: pointer;
+  }
+`;
+
+export const CloseBars = styled(FaRegWindowClose)`
+  display: none;
+  color: #fff;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    postion: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 75%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+`;
+
+export const NavMenuResp = styled.div`
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 9rem; //Cachar bien este
+    position: absolute;
+    top: 80px;
+    left: 0;
+    opacity: 1;
+    // transition: all 0.5 ease;
+    background: #000;
   }
 `;
 
@@ -64,7 +100,9 @@ export const NavBtn = styled.nav`
   margin-right: 24px;
 
   @media screen and (max-width: 768px) {
-    display: none;
+    // display: none;
+    position: relative;
+    margin-right: 0px;
   }
 `;
 

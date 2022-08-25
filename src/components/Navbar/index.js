@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Nav,
   NavLink,
@@ -7,18 +7,35 @@ import {
   NavBtn,
   NavBtnLink,
   NavLogo,
+  CloseBars,
+  NavMenuResp,
 } from "./NavbarElements";
 import Logo from "./Logo.JPG";
 
 const Navbar = () => {
+  const [toggleBars, setToggleBars] = useState(true);
+
   return (
     <>
       <Nav>
         <NavLink to="/">
           <NavLogo src={Logo}></NavLogo>
-          {/* <img src={Logo} alt="Logo de la app Handey"></img> */}
         </NavLink>
-        <Bars />
+        {toggleBars ? (
+          <Bars onClick={() => setToggleBars(!toggleBars)} />
+        ) : (
+          <CloseBars onClick={() => setToggleBars(!toggleBars)} />
+        )}
+        {toggleBars ? (
+          ""
+        ) : (
+          <NavMenuResp>
+            <NavLink to="/ingresar">Ingresar</NavLink>
+            <NavLink to="/nosotros">Nosotros</NavLink>
+            <NavLink to="/contacto">Contáctanos</NavLink>
+            <NavLink to="/registrate">Registrate</NavLink>
+          </NavMenuResp>
+        )}
         <NavMenu>
           <NavLink to="/nosotros">Nosotros</NavLink>
           <NavLink to="/contacto">Contáctanos</NavLink>

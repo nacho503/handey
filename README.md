@@ -72,3 +72,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Tutoriales:
 
 NAvBar: →https://www.youtube.com/watch?v=VzWBLj_CfpE&t=1453s
+https://www.youtube.com/watch?v=fL8cFqhTHwA
